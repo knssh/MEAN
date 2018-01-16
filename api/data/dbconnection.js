@@ -1,5 +1,5 @@
 var MongoClient = require('mongodb').MongoClient;
-var dburl = 'mongodb://localhost:27017/hoteldb';
+var dburl = 'mongodb://localhost:27017';
 
 var _connection = null;
 
@@ -9,7 +9,7 @@ var open = function(){
             console.log("DB connection failed");
             return;
         }
-        _connection = db;
+        _connection = db.db('hoteldb');
         console.log("DB connection open",db);
     });
 };
